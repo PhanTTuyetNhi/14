@@ -1,6 +1,4 @@
-
-package Assignment14;
-
+package O.exercise2;
 import java.util.Date;
 
 public class TextBook extends Book {
@@ -12,17 +10,26 @@ public class TextBook extends Book {
     }
     public void addBook(){
         super.addBook();
-        System.out.println("Status:");
+        System.out.println("Status new or old:");
         status=scanner.nextLine();
     }
     public void updateBook(String id){
         super.updateBook(id);
-        System.out.println("Status:");
+        System.out.println("Status new or old:");
         status=scanner.nextLine();
     }
-    public void displayBook(){
+    public void display(){
         super.displayBook();
-        System.out.println("Status:"+status);
+        System.out.println("Status new or old:"+status);
     }
-
+public double calculateDiscount(){
+    if(status=="new")
+        return super.calculateDiscount()*0.1;
+    else 
+        return super.calculateDiscount()*0.05;
+}
+    @Override
+    public double calculateTotal() {
+        return super.calculateDiscount()-calculateDiscount();
+    }
 }

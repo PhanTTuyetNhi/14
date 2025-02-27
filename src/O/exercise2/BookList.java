@@ -1,10 +1,12 @@
-package Assignment14;
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package O.exercise2;
 import java.util.ArrayList;
 
 public class BookList {
-
-    ArrayList<Book> bookList = new ArrayList<>();
+     ArrayList<Book> bookList = new ArrayList<>();
 
     public void addBook(Book book) {
         bookList.add(book);
@@ -36,5 +38,12 @@ public class BookList {
         for (Book book : bookList) {
             book.displayBook();
         }
+    }
+    public double calculateTotalAmount(){
+        int S=0;
+        for (Book book : bookList) {
+            S+=book.calculateTotal();
+        }
+        return S;
     }
 }

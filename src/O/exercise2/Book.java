@@ -1,24 +1,23 @@
 
-package Assignment14;
-
+package O.exercise2;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.Scanner;
 import java.text.SimpleDateFormat;
-
-public abstract class Book implements IBook{
+public abstract class Book implements IBook {
     String bookId;
     String publisher;
     Date entryDate;
     double unitPrice;
     double quantity;
-    public Book(){}
-    public Book(String bookId,String publisher,Date entryDate,double unitPrice,double quantity){
-        this.bookId=bookId;
-        this.publisher=publisher;
-        this.entryDate=entryDate;
-        this.unitPrice=unitPrice;
-        this.quantity=quantity;
+public Book(){}
+
+    public Book(String bookId, String publisher, Date entryDate, double unitPrice, double quantity) {
+        this.bookId = bookId;
+        this.publisher = publisher;
+        this.entryDate = entryDate;
+        this.unitPrice = unitPrice;
+        this.quantity = quantity;
     }
 
     public String getBookId() {
@@ -60,9 +59,7 @@ public abstract class Book implements IBook{
     public void setQuantity(double quantity) {
         this.quantity = quantity;
     }
-    
-            Scanner scanner=new Scanner(System.in);
-
+    Scanner scanner=new Scanner(System.in);
     public void addBook(){
         System.out.print("ID:");
         bookId=scanner.nextLine();
@@ -81,14 +78,16 @@ public abstract class Book implements IBook{
         unitPrice=scanner.nextDouble();
         System.out.println("Quantity:");
         quantity=scanner.nextDouble();
+        scanner.nextLine();
+
     }
-    public void  updateBook(String id){
+     public void  updateBook(String id) {
        addBook();
     }
-    public void displayBook(){
+     public void displayBook(){
         System.out.println("Book ID:"+bookId);
         System.out.println("Publisher:"+publisher);
-        System.out.println("Enter Daate:"+entryDate);
+        System.out.println("Enter Date:"+entryDate);
         System.out.println("UnitPrice:"+unitPrice);
         System.out.println("Quantily:"+quantity);
     }
